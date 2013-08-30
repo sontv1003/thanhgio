@@ -145,7 +145,7 @@ function twentytwelve_scripts_styles() {
 	$font_url = twentytwelve_get_font_url();
 	if ( ! empty( $font_url ) )
 		wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
-
+        
 	/*
 	 * Loads our main stylesheet.
 	 */
@@ -155,6 +155,7 @@ function twentytwelve_scripts_styles() {
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
+	wp_enqueue_style( 'twentytwelve-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
